@@ -1,6 +1,6 @@
 """
 Tests for Basket Analysis
-Tests for Task 2 modules
+Tests for the basket analysis modules
 Author: Sourabha K Kallapur
 """
 
@@ -131,7 +131,7 @@ class TestTransactionLoader:
         import pandas as pd
         
         # Load real supermarket dataset
-        df = pd.read_csv("data/Supermarket_dataset_PAI.csv")
+        df = pd.read_csv("data/supermarket_transactions.csv")
         transactions = df.groupby(['Member_number', 'Date'])['itemDescription'].apply(list).tolist()
         
         assert len(transactions) > 0
@@ -144,7 +144,7 @@ class TestTransactionLoader:
         
         loader = TransactionLoader()
         # Load real dataset
-        df = pd.read_csv("data/Supermarket_dataset_PAI.csv")
+        df = pd.read_csv("data/supermarket_transactions.csv")
         loader.transactions = df.groupby(['Member_number', 'Date'])['itemDescription'].apply(list).tolist()
         
         graph = loader.build_graph_from_transactions()
@@ -223,7 +223,7 @@ class TestRealSupermarketDataset:
         import pandas as pd
         
         # Load the real supermarket dataset
-        df = pd.read_csv("data/Supermarket_dataset_PAI.csv")
+        df = pd.read_csv("data/supermarket_transactions.csv")
         
         # Group by Member_number and Date to form transactions
         cls.transactions = df.groupby(['Member_number', 'Date'])['itemDescription'].apply(list).tolist()

@@ -1,14 +1,14 @@
 """
-Setup script for PAI Assignment
+Setup script for the health dashboard and basket analysis project
 """
 
 from setuptools import setup, find_packages
 
 setup(
-    name="pai-assignment",
+    name="health-dashboard-basket-analysis",
     version="1.0.0",
     author="Sourabha K Kallapur",
-    description="Programming for AI Assignment - Health Dashboard and Basket Analysis",
+    description="Health data dashboard and supermarket basket analysis",
     packages=find_packages(),
     python_requires='>=3.8',
     install_requires=[

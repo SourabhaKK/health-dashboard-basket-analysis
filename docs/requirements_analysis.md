@@ -1,7 +1,7 @@
 ```markdown
 # Requirements Analysis
 
-## Task 1: Public Health Data Dashboard
+## Public Health Data Dashboard
 
 ### Functional Requirements
 
@@ -51,7 +51,7 @@
 
 ---
 
-## Task 2: Supermarket Basket Analysis
+## Supermarket Basket Analysis
 
 ### Functional Requirements
 

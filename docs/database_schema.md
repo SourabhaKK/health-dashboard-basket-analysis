@@ -1,6 +1,6 @@
 # Database Schema Design
 
-## Task 1: Public Health Database
+## Public Health Database
 
 ### Entity-Relationship Model
 

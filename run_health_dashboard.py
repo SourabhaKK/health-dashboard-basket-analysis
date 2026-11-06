@@ -1,5 +1,5 @@
 """
-Run Script for Task 1: Health Dashboard
+Run script for the Health Dashboard
 Entry point for the Public Health Data Insights Dashboard
 Author: Sourabha K Kallapur
 """
@@ -15,7 +15,7 @@ from health_dashboard.cli import HealthDashboardCLI
 
 
 def main():
-    """Main entry point for Task 1"""
+    """Main entry point for the Health Dashboard"""
     try:
         # Create and run the CLI
         cli = HealthDashboardCLI()
