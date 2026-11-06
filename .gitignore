@@ -44,3 +44,13 @@ htmlcov/
 
 # Environment variables
 .env
+
+# Secrets and credentials
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+service-account*.json
