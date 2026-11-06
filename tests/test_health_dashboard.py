@@ -1,6 +1,6 @@
 """
 Tests for Health Dashboard
-Tests for Task 1 modules
+Tests for the health dashboard modules
 Author: Sourabha K Kallapur
 """
 

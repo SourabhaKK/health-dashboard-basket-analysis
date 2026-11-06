@@ -1,5 +1,5 @@
 """
-Run Script for Task 2: Basket Analysis
+Run script for the Basket Analysis
 Entry point for the Supermarket Basket Analysis System
 Author: Sourabha K Kallapur
 """
@@ -15,7 +15,7 @@ from basket_analysis.cli import BasketAnalysisCLI
 
 
 def main():
-    """Main entry point for Task 2"""
+    """Main entry point for the Basket Analysis"""
     try:
         # Create and run the CLI
         cli = BasketAnalysisCLI()

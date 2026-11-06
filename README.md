@@ -1,14 +1,9 @@
-# Programming for AI - Individual Assignment
+# Health Data Dashboard & Supermarket Basket Analysis
 
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![License](https://img.shields.io/badge/License-Academic-green.svg)](LICENSE)
 [![Tests](https://img.shields.io/badge/Tests-44%2F44%20Passing-brightgreen.svg)](tests/)
 
-**Student:** Sourabha K Kallapur  
-**Student ID:** 5751926  
-**Module:** WM9QF-15 - Programming for Artificial Intelligence  
-**University:** University of Warwick  
-**Submission Date:** 15th December 2025
+**Author:** Sourabha K Kallapur
 
 ---
 
@@ -16,10 +11,10 @@
 
 This repository contains two comprehensive Python applications demonstrating advanced programming concepts, data structures, and algorithms:
 
-### **Task 1: Public Health Data Insights Dashboard**
+### **Public Health Data Insights Dashboard**
 A command-line tool for analyzing public health data (vaccination rates, disease outbreaks, mental health statistics) with robust data quality handling, statistical analysis, and visualization capabilities.
 
-### **Task 2: Supermarket Basket Analysis**
+### **Supermarket Basket Analysis**
 A graph-based market basket analysis system implementing BFS/DFS algorithms, Apriori frequent itemset mining, and product recommendation engine using real supermarket transaction data.
 
 ---
@@ -35,8 +30,8 @@ A graph-based market basket analysis system implementing BFS/DFS algorithms, Apr
 
 ```bash
 # Clone repository
-git clone git@github.com:SourabhaKK/PAI-A1FT-Solo-Assignment.git
-cd PAI-A1FT-Solo-Assignment
+git clone https://github.com/SourabhaKK/health-dashboard-basket-analysis.git
+cd health-dashboard-basket-analysis
 
 # Create virtual environment
 python -m venv .venv
@@ -56,9 +51,9 @@ pip install -r requirements.txt
 ## 📁 Project Structure
 
 ```
-PAI-A1FT-Solo-Assignment/
+health-dashboard-basket-analysis/
 │
-├── health_dashboard/          # Task 1: Health Data Analysis
+├── health_dashboard/          # Health data analysis
 │   ├── cli.py                 # Main CLI interface
 │   ├── data_loader.py         # CSV/JSON/API data loading
 │   ├── data_cleaner.py        # Data quality handling
@@ -69,7 +64,7 @@ PAI-A1FT-Solo-Assignment/
 │   ├── export.py              # Data export (CSV/JSON)
 │   └── logger.py              # Activity logging
 │
-├── basket_analysis/           # Task 2: Market Basket Analysis
+├── basket_analysis/           # Market basket analysis
 │   ├── cli.py                 # Main CLI interface
 │   ├── graph.py               # Adjacency list graph structure
 │   ├── algorithms.py          # BFS/DFS implementations
@@ -83,16 +78,16 @@ PAI-A1FT-Solo-Assignment/
 │
 ├── data/                      # Datasets
 │   ├── sample_vaccination_data.csv
-│   └── Supermarket_dataset_PAI.csv
+│   └── supermarket_transactions.csv
 │
 ├── outputs/                   # Generated outputs
 │   ├── vaccination_trend.png
-│   ├── task1_uml_class_diagram.png
-│   ├── task1_er_diagram.png
+│   ├── health-dashboard-class-diagram.png
+│   ├── health-dashboard-er-diagram.png
 │   └── [execution screenshots]
 │
-├── run_task1.py              # Task 1 entry point
-├── run_task2.py              # Task 2 entry point
+├── run_health_dashboard.py   # Health dashboard entry point
+├── run_basket_analysis.py    # Basket analysis entry point
 ├── requirements.txt          # Python dependencies
 ├── pytest.ini                # Test configuration
 ├── setup.py                  # Package setup
@@ -103,10 +98,10 @@ PAI-A1FT-Solo-Assignment/
 
 ## 💻 Usage
 
-### **Task 1: Health Dashboard**
+### **Health Dashboard**
 
 ```bash
-python run_task1.py
+python run_health_dashboard.py
 ```
 
 **Features:**
@@ -128,10 +123,10 @@ python run_task1.py
 
 ---
 
-### **Task 2: Basket Analysis**
+### **Basket Analysis**
 
 ```bash
-python run_task2.py
+python run_basket_analysis.py
 ```
 
 **Features:**
@@ -143,7 +138,7 @@ python run_task2.py
 - 📊 Graph statistics and analysis
 
 **Example Workflow:**
-1. Load transactions from `data/Supermarket_dataset_PAI.csv`
+1. Load transactions from `data/supermarket_transactions.csv`
 2. Build product co-purchase graph
 3. Find frequent pairs (min support: 0.01)
 4. Get recommendations for "whole milk"
@@ -185,14 +180,14 @@ pytest tests/test_basket_analysis.py
 - **Total Tests:** 44
 - **Pass Rate:** 100%
 - **Coverage:**
-  - Task 1: 19 tests (data loading, cleaning, filtering, stats, database)
-  - Task 2: 25 tests (graph operations, algorithms, mining, recommendations)
+  - Health dashboard: 19 tests (data loading, cleaning, filtering, stats, database)
+  - Basket analysis: 25 tests (graph operations, algorithms, mining, recommendations)
 
 ---
 
 ## 🎯 Key Features
 
-### **Task 1 Highlights:**
+### **Health Dashboard Highlights:**
 
 ✅ **Robust Data Cleaning**
 - Handles 5 different date formats
@@ -212,7 +207,7 @@ pytest tests/test_basket_analysis.py
 
 ---
 
-### **Task 2 Highlights:**
+### **Basket Analysis Highlights:**
 
 ✅ **Efficient Graph Structure**
 - Adjacency list (O(V+E) space)
@@ -271,7 +266,6 @@ This project follows **Test-Driven Development (TDD)** principles:
 - 6 RED commits (failing tests)
 - 6 REFACTOR commits (optimizations)
 - Regular feature commits
-- [Clarification commit](https://github.com/SourabhaKK/PAI-A1FT-Solo-Assignment/commit/6450ed7) on TDD approach
 
 ---
 
@@ -292,16 +286,14 @@ See `requirements.txt` for complete list.
 
 ## 📸 Screenshots
 
-### Task 1: Health Dashboard
-![Task 1 Menu](outputs/Task%201%20Menu%20.png)
-![Data Loading](outputs/Task%201%20Data%20Loading.png)
+### Health Dashboard
+![View data](outputs/health-dashboard-view-data.png)
 
-### Task 2: Basket Analysis
-![Task 2 Menu](outputs/Task%202%20Menu%20.png)
-![Recommendations](outputs/Task%202%20Product%20Reccomendations.png)
+### Charts and diagrams
+![Doses administered over time](outputs/doses-over-time.png)
+![Vaccination trend](outputs/vaccination_trend.png)
+![ER diagram](outputs/health-dashboard-er-diagram.png)
+![Class diagram](outputs/health-dashboard-class-diagram.png)
 
-### Test Results
-![All Tests Passing](outputs/Python%20Tests.png)
-
----
-
+### Development history
+![TDD commit history](outputs/git-tdd-commit-history.png)
