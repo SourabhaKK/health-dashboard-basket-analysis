@@ -6,7 +6,7 @@ Author: Sourabha K Kallapur
 
 import sqlite3
 import pandas as pd
-from typing import List, Dict, Optional, Tuple
+from typing import Any, List, Dict, Optional, Tuple
 import os
 
 
@@ -24,8 +24,9 @@ class HealthDatabase:
             db_path: Path to SQLite database file
         """
         self.db_path = db_path
-        self.conn = None
-        self.cursor = None
+        # Both are set by connect(); Any because every method assumes it was called.
+        self.conn: Any = None
+        self.cursor: Any = None
     
     def connect(self):
         """Establish connection to the database"""
@@ -112,8 +113,8 @@ class HealthDatabase:
     
     # ===== CREATE Operations =====
     
-    def add_country(self, country_name: str, region: str = None, 
-                   population: int = None) -> int:
+    def add_country(self, country_name: str, region: Optional[str] = None, 
+                   population: Optional[int] = None) -> int:
         """
         Add a new country to the database
         
@@ -151,10 +152,10 @@ class HealthDatabase:
             raise
     
     def add_vaccination_record(self, country_id: int, date: str, 
-                              vaccine_type: str = None,
-                              doses_administered: int = None,
-                              population_vaccinated: int = None,
-                              percentage_vaccinated: float = None) -> int:
+                              vaccine_type: Optional[str] = None,
+                              doses_administered: Optional[int] = None,
+                              population_vaccinated: Optional[int] = None,
+                              percentage_vaccinated: Optional[float] = None) -> int:
         """
         Add a vaccination record
         
@@ -188,9 +189,9 @@ class HealthDatabase:
             raise
     
     def add_disease_outbreak(self, country_id: int, disease_name: str,
-                            date_reported: str, cases_reported: int = None,
-                            deaths_reported: int = None,
-                            recovery_rate: float = None) -> int:
+                            date_reported: str, cases_reported: Optional[int] = None,
+                            deaths_reported: Optional[int] = None,
+                            recovery_rate: Optional[float] = None) -> int:
         """
         Add a disease outbreak record
         
@@ -247,7 +248,7 @@ class HealthDatabase:
             }
         return None
     
-    def get_vaccination_records(self, country_id: int = None) -> pd.DataFrame:
+    def get_vaccination_records(self, country_id: Optional[int] = None) -> pd.DataFrame:
         """
         Get vaccination records, optionally filtered by country
         
@@ -270,7 +271,7 @@ class HealthDatabase:
             '''
             return pd.read_sql_query(query, self.conn)
     
-    def get_disease_outbreaks(self, country_id: int = None) -> pd.DataFrame:
+    def get_disease_outbreaks(self, country_id: Optional[int] = None) -> pd.DataFrame:
         """
         Get disease outbreak records, optionally filtered by country
         
@@ -295,8 +296,8 @@ class HealthDatabase:
     
     # ===== UPDATE Operations =====
     
-    def update_country(self, country_id: int, region: str = None,
-                      population: int = None):
+    def update_country(self, country_id: int, region: Optional[str] = None,
+                      population: Optional[int] = None):
         """Update country information"""
         try:
             if region:

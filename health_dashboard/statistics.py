@@ -142,7 +142,7 @@ class HealthStatistics:
         sorted_data = self.data.sort_values(by=column, ascending=ascending)
         return sorted_data.head(n)
     
-    def calculate_correlation(self, col1: str, col2: str) -> float:
+    def calculate_correlation(self, col1: str, col2: str) -> Optional[float]:
         """
         Calculate correlation between two numeric columns
         

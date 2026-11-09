@@ -30,7 +30,7 @@ class DataExporter:
             os.makedirs(output_dir)
             print(f"Created output directory: {output_dir}")
     
-    def export_to_csv(self, data: pd.DataFrame, filename: str = None) -> str:
+    def export_to_csv(self, data: pd.DataFrame, filename: Optional[str] = None) -> str:
         """
         Export data to CSV file
         
@@ -61,7 +61,7 @@ class DataExporter:
             print(f"Error exporting to CSV: {e}")
             raise
     
-    def export_to_json(self, data: pd.DataFrame, filename: str = None,
+    def export_to_json(self, data: pd.DataFrame, filename: Optional[str] = None,
                       orient: str = 'records') -> str:
         """
         Export data to JSON file
@@ -93,7 +93,7 @@ class DataExporter:
             raise
     
     def export_summary_report(self, data: pd.DataFrame, stats_dict: dict,
-                             filename: str = None) -> str:
+                             filename: Optional[str] = None) -> str:
         """
         Export a formatted summary report as text file
         
@@ -152,7 +152,7 @@ class DataExporter:
             raise
     
     def export_filtered_data(self, data: pd.DataFrame, filter_description: str,
-                            format: str = 'csv', filename: str = None) -> str:
+                            format: str = 'csv', filename: Optional[str] = None) -> str:
         """
         Export filtered data with description
         

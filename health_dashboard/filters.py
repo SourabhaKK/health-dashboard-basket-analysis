@@ -58,7 +58,7 @@ class DataFilter:
         return self.filtered_data
     
     def filter_by_date_range(self, start_date: str, end_date: str,
-                            date_column: str = None) -> pd.DataFrame:
+                            date_column: Optional[str] = None) -> pd.DataFrame:
         """
         Filter data by date range
         
@@ -100,8 +100,8 @@ class DataFilter:
         print(f"Filtered to {len(self.filtered_data)} records between {start_date} and {end_date}")
         return self.filtered_data
     
-    def filter_by_value_range(self, column: str, min_value: float = None,
-                             max_value: float = None) -> pd.DataFrame:
+    def filter_by_value_range(self, column: str, min_value: Optional[float] = None,
+                             max_value: Optional[float] = None) -> pd.DataFrame:
         """
         Filter data by numeric value range
         

@@ -35,7 +35,7 @@ class HealthVisualizer:
         plt.style.use('seaborn-v0_8-darkgrid')
     
     def plot_line_chart(self, x_column: str, y_column: str,
-                       title: str = None, save_as: str = None):
+                       title: Optional[str] = None, save_as: Optional[str] = None):
         """
         Create a line chart showing trends over time
         
@@ -71,8 +71,8 @@ class HealthVisualizer:
         plt.show()
     
     def plot_bar_chart(self, x_column: str, y_column: str,
-                      title: str = None, save_as: str = None,
-                      top_n: int = None):
+                      title: Optional[str] = None, save_as: Optional[str] = None,
+                      top_n: Optional[int] = None):
         """
         Create a bar chart for comparisons
         
@@ -121,7 +121,7 @@ class HealthVisualizer:
         plt.show()
     
     def plot_pie_chart(self, values_column: str, labels_column: str,
-                      title: str = None, save_as: str = None,
+                      title: Optional[str] = None, save_as: Optional[str] = None,
                       top_n: int = 10):
         """
         Create a pie chart for distribution analysis
@@ -159,7 +159,7 @@ class HealthVisualizer:
         plt.show()
     
     def plot_multi_line_chart(self, x_column: str, y_columns: List[str],
-                             title: str = None, save_as: str = None):
+                             title: Optional[str] = None, save_as: Optional[str] = None):
         """
         Create a line chart with multiple lines
         
@@ -196,7 +196,7 @@ class HealthVisualizer:
         plt.show()
     
     def plot_histogram(self, column: str, bins: int = 20,
-                      title: str = None, save_as: str = None):
+                      title: Optional[str] = None, save_as: Optional[str] = None):
         """
         Create a histogram for distribution analysis
         
@@ -231,7 +231,7 @@ class HealthVisualizer:
         plt.show()
     
     def create_dashboard(self, date_col: str, value_cols: List[str],
-                        group_col: str = None, save_as: str = None):
+                        group_col: Optional[str] = None, save_as: Optional[str] = None):
         """
         Create a comprehensive dashboard with multiple charts
         

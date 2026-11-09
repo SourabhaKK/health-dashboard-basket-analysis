@@ -117,7 +117,7 @@ class TransactionLoader:
             all_items.update(transaction)
         
         # Find most common items
-        item_counts = {}
+        item_counts: Dict[str, int] = {}
         for transaction in self.transactions:
             for item in transaction:
                 item_counts[item] = item_counts.get(item, 0) + 1

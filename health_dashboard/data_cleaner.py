@@ -24,7 +24,7 @@ class DataCleaner:
             data: DataFrame to clean
         """
         self.data = data.copy()  # Work on a copy to preserve original
-        self.cleaning_log = []  # Keep track of cleaning operations
+        self.cleaning_log: List[str] = []  # Keep track of cleaning operations
     
     def handle_missing_values(self, strategy: str = 'drop', 
                              fill_value=None) -> pd.DataFrame:
@@ -81,7 +81,7 @@ class DataCleaner:
         return self.data
     
     def convert_date_columns(self, date_columns: List[str], 
-                            date_format: str = None) -> pd.DataFrame:
+                            date_format: Optional[str] = None) -> pd.DataFrame:
         """
         Convert string columns to datetime format
         
@@ -138,7 +138,7 @@ class DataCleaner:
         
         return self.data
     
-    def remove_duplicates(self, subset: List[str] = None) -> pd.DataFrame:
+    def remove_duplicates(self, subset: Optional[List[str]] = None) -> pd.DataFrame:
         """
         Remove duplicate rows
         
@@ -202,8 +202,8 @@ class DataCleaner:
         
         return self.data
     
-    def validate_numeric_range(self, column: str, min_val: float = None,
-                              max_val: float = None) -> pd.DataFrame:
+    def validate_numeric_range(self, column: str, min_val: Optional[float] = None,
+                              max_val: Optional[float] = None) -> pd.DataFrame:
         """
         Validate that numeric values are within a specified range
         
