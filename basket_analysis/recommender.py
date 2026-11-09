@@ -4,7 +4,7 @@ Provides product recommendations based on graph analysis
 Author: Sourabha K Kallapur
 """
 
-from typing import List, Dict, Tuple, Set
+from typing import Optional, List, Dict, Tuple, Set
 from basket_analysis.graph import ProductGraph
 from basket_analysis.algorithms import GraphAlgorithms
 
@@ -25,7 +25,7 @@ class ProductRecommender:
         self.algorithms = GraphAlgorithms(graph)
     
     def recommend_for_item(self, item: str, n: int = 5, 
-                          exclude_items: Set[str] = None) -> List[Tuple[str, int]]:
+                          exclude_items: Optional[Set[str]] = None) -> List[Tuple[str, int]]:
         """
         Recommend products to buy with a given item
         
@@ -74,7 +74,7 @@ class ProductRecommender:
             return []
         
         # Collect all recommendations from each item in the basket
-        all_recommendations = {}
+        all_recommendations: Dict[str, float] = {}
         
         for item in basket:
             if item in self.graph.get_all_nodes():
@@ -128,7 +128,7 @@ class ProductRecommender:
                 bundles.append((bundle_items, score))
         
         # Remove duplicates and sort by score
-        unique_bundles = {}
+        unique_bundles: Dict[Tuple[str, ...], float] = {}
         for bundle, score in bundles:
             bundle_key = tuple(bundle)
             if bundle_key not in unique_bundles or unique_bundles[bundle_key] < score:

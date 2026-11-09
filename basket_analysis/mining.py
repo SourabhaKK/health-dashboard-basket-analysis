@@ -4,7 +4,7 @@ Implements Apriori algorithm and frequent pair mining
 Author: Sourabha K Kallapur
 """
 
-from typing import List, Dict, Set, Tuple
+from typing import Any, List, Dict, Set, Tuple
 from collections import defaultdict
 from itertools import combinations
 
@@ -39,7 +39,7 @@ class FrequentItemsetMiner:
             Dictionary of {frozenset({item}): count}
         """
         # Count occurrences of each item
-        item_counts = defaultdict(int)
+        item_counts: defaultdict[Any, int] = defaultdict(int)
         
         for transaction in self.transactions:
             for item in transaction:
@@ -63,7 +63,7 @@ class FrequentItemsetMiner:
             List of ((item1, item2), count) tuples sorted by count
         """
         # Count occurrences of each pair
-        pair_counts = defaultdict(int)
+        pair_counts: defaultdict[Any, int] = defaultdict(int)
         
         for transaction in self.transactions:
             # Generate all pairs from this transaction
@@ -98,7 +98,7 @@ class FrequentItemsetMiner:
             return {}
         
         # Count occurrences of each k-itemset
-        itemset_counts = defaultdict(int)
+        itemset_counts: defaultdict[Any, int] = defaultdict(int)
         
         for transaction in self.transactions:
             if len(transaction) >= k:
@@ -169,7 +169,7 @@ class FrequentItemsetMiner:
         frequent_pairs = self.find_frequent_pairs()
         frequent_1_items = self.find_frequent_1_itemsets()
         
-        rules = []
+        rules: List[Dict[str, Any]] = []
         
         for (item1, item2), pair_count in frequent_pairs:
             # Calculate support and confidence for both directions

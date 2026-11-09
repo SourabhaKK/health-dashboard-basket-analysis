@@ -15,7 +15,7 @@ class ActivityLogger:
     Logs user activities and system events
     """
     
-    def __init__(self, log_dir: str = "logs", log_file: str = None):
+    def __init__(self, log_dir: str = "logs", log_file: Optional[str] = None):
         """
         Initialize logger
         
@@ -67,7 +67,7 @@ class ActivityLogger:
         self.logger.info(f"Log file: {self.log_file}")
         self.logger.info("=" * 60)
     
-    def log_data_load(self, source_type: str, record_count: int, source_path: str = None):
+    def log_data_load(self, source_type: str, record_count: int, source_path: Optional[str] = None):
         """
         Log data loading activity
         
@@ -101,7 +101,7 @@ class ActivityLogger:
         self.logger.info(message)
     
     def log_database_operation(self, operation: str, table: str, 
-                              record_count: int = None):
+                              record_count: Optional[int] = None):
         """
         Log database operations
         
@@ -130,7 +130,7 @@ class ActivityLogger:
         
         self.logger.info(message)
     
-    def log_visualization(self, chart_type: str, filename: str = None):
+    def log_visualization(self, chart_type: str, filename: Optional[str] = None):
         """
         Log visualization creation
         
@@ -144,7 +144,7 @@ class ActivityLogger:
         
         self.logger.info(message)
     
-    def log_user_action(self, action: str, details: str = None):
+    def log_user_action(self, action: str, details: Optional[str] = None):
         """
         Log general user action
         
@@ -158,7 +158,7 @@ class ActivityLogger:
         
         self.logger.info(message)
     
-    def log_error(self, error_message: str, exception: Exception = None):
+    def log_error(self, error_message: str, exception: Optional[Exception] = None):
         """
         Log an error
         

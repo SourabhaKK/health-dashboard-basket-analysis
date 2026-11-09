@@ -14,3 +14,6 @@ pytest-cov==7.1.0
 
 # CLI Formatting (optional but nice)
 colorama==0.4.6
+
+# Type checking
+mypy==2.4.1
